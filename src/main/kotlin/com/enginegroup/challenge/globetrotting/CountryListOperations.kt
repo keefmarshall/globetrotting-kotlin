@@ -1,6 +1,8 @@
 package com.enginegroup.challenge.globetrotting
 
+import java.util.stream.Collectors
 import javax.swing.Box
+import kotlin.streams.toList
 
 data class CityDistance(val city: String, val distance: Double)
 typealias CitiesByDistance = Map<String, List<CityDistance>>
@@ -12,9 +14,10 @@ typealias CitiesByDistance = Map<String, List<CityDistance>>
 //    - the second entry in each Tuple is the distance from the source city
 // - the list is sorted by ascending distance
 fun generateLookupMap(countryList: List<Country>) : CitiesByDistance =
-    countryList.map { c ->
-        c.capitalCity!! to sortedListOfOtherCities(c, countryList)
-    }.toMap()
+    countryList.parallelStream()
+        .map { c -> c.capitalCity!! to sortedListOfOtherCities(c, countryList) }
+        .toList() //collect(Collectors.toList())
+        .toMap()
 
 fun sortedListOfOtherCities(country: Country, countryList: List<Country>) =
     countryList
