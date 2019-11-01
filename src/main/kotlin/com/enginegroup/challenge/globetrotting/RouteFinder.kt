@@ -1,10 +1,10 @@
 package com.enginegroup.challenge.globetrotting
 
-class RouteFinder(val cityMap: CitiesByDistance) {
+class RouteFinder(private val cityMap: CitiesByDistance) {
 
     fun findRoute(city: String, range: Double, visited: List<String>) : List<String> {
         val others = mutableListOf<CityDistance>()
-        for (other in cityMap[city]!!) {
+        for (other in cityMap[city] ?: error("City $city not found in list!")) {
             if (other.distance > range) {
                 break;
             }
@@ -30,5 +30,4 @@ class RouteFinder(val cityMap: CitiesByDistance) {
 
         return route;
     }
-
 }
