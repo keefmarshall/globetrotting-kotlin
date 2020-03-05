@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style type="text/css">
+        @import url('https://fonts.googleapis.com/css?family=Lato&display=swap');
+
+        body {
+            font-family: 'Lato', sans-serif;
+        }
+
+        #chartdiv {
+            width: 80%;
+            height: 500px;
+            float: right;
+        }
+
+        #infodiv {
+            width: 20%;
+            height: 450px;
+            float: left;
+        }
+    </style>
+</head>
+<body>
+    <div id="chartdiv"></div>
+    <div id="infodiv">
+        Click on a country..
+    </div>
+
+    <script src="https://www.amcharts.com/lib/4/core.js"></script>
+    <script src="https://www.amcharts.com/lib/4/maps.js"></script>
+    <script src="https://www.amcharts.com/lib/4/geodata/worldLow.js"></script>
+    <script defer src="main.js" onload="init()"></script>
+
+</body>
+</html>

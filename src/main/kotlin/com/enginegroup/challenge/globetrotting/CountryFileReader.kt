@@ -10,6 +10,7 @@ import java.io.File
 @JsonIgnoreProperties(ignoreUnknown = true)
 data class Country(
     val id: String,
+    val iso2Code: String,
     val name: String,
     val capitalCity: String?,
     val longitude: Double?,

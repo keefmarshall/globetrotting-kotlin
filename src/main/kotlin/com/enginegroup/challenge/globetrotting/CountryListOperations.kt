@@ -1,7 +1,5 @@
 package com.enginegroup.challenge.globetrotting
 
-import java.util.stream.Collectors
-import javax.swing.Box
 import kotlin.streams.toList
 
 data class CityDistance(val city: String, val distance: Double)

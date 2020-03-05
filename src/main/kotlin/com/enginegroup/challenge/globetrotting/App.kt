@@ -5,6 +5,15 @@ fun main(args: Array<String>) {
     val countries = readCountryFile("src/main/resources/countries.json")
     val cityMap = generateLookupMap(countries)
 
+//    findRoute(args, countries, cityMap)
+
+}
+
+private fun findRoute(
+    args: Array<String>,
+    countries: List<Country>,
+    cityMap: CitiesByDistance
+) {
     var targetCity = "Washington D.C."
     var targetRange = 5000.0
 
